@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainJavaFX.StatisticsMenuController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1000.0" pickOnBounds="true">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="pieChart" layoutX="66.0" layoutY="101.0" prefHeight="360.0" prefWidth="360.0" />
+      <Button layoutX="885.0" layoutY="743.0" mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="101.0" text="Back" />
+      <BarChart fx:id="barChart" barGap="8.0" categoryGap="100.0" layoutX="455.0" layoutY="110.0" legendVisible="false" prefHeight="537.0" prefWidth="500.0" title="Packets Captured">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <TableView fx:id="protocolTable" layoutX="66.0" layoutY="529.0" prefHeight="138.0" prefWidth="360.0" stylesheets="@emptyRows.css">
+        <columns>
+          <TableColumn fx:id="protocolColumn" prefWidth="184.0" resizable="false" text="Protocol" />
+          <TableColumn fx:id="counterColumn" prefWidth="175.0" resizable="false" text="Counter" />
+        </columns>
+      </TableView>
+      <Label fx:id="tcpPercentLabel" layoutX="133.0" layoutY="474.0" text="0.00%" />
+      <Label fx:id="udpPercentLabel" layoutX="195.0" layoutY="474.0" text="0.00%" />
+      <Label fx:id="icmpPercentLabel" layoutX="257.0" layoutY="474.0" text="0.00%" />
+      <Label fx:id="othersPercentLabel" layoutX="317.0" layoutY="474.0" text="0.00%" />
+      <Label layoutX="192.0" layoutY="81.0" text="Protocol Data">
+         <font>
+            <Font name="Open Sans" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ignoredLabel" layoutX="604.0" layoutY="656.0" text="0" />
+      <Label fx:id="maliciousLabel" layoutX="825.0" layoutY="657.0" text="0" />
+   </children>
+</AnchorPane>

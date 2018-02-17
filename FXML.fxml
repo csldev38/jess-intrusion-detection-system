@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="925.0" prefWidth="1100.0" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainJavaFX.FXMLController">
+   <children>
+      <ImageView fitHeight="925.0" fitWidth="1100.0" pickOnBounds="true" rotate="180.0">
+         <image>
+            <Image url="@back_dark.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="packetTable" layoutX="70.0" layoutY="67.0" prefHeight="370.0" prefWidth="960.0">
+        <columns>
+          <TableColumn fx:id="number" minWidth="62.0" prefWidth="147.0" text="Number" />
+          <TableColumn fx:id="protocol" minWidth="50.0" prefWidth="171.0" text="Protocol" />
+            <TableColumn fx:id="source_ip" minWidth="64.0" prefWidth="160.0" text="Source IP" />
+            <TableColumn fx:id="source_port" minWidth="68.0" prefWidth="160.0" text="Source Port" />
+            <TableColumn fx:id="destination_ip" minWidth="89.0" prefWidth="160.0" text="Destination IP" />
+            <TableColumn fx:id="destination_port" minWidth="96.0" prefWidth="152.0" text="Destination Port" />
+        </columns>
+      </TableView>
+      <TableView fx:id="alertTable" layoutX="70.0" layoutY="475.0" prefHeight="370.0" prefWidth="960.0">
+        <columns>
+          <TableColumn fx:id="alertTime" prefWidth="205.0" text="Timestamp" />
+          <TableColumn fx:id="alertDetails" prefWidth="568.0" text="Alert" />
+            <TableColumn fx:id="packetReference" prefWidth="186.0" text="Packet Reference" />
+        </columns>
+      </TableView>
+      <Button fx:id="exitButton" alignment="CENTER" contentDisplay="TOP" layoutX="1036.0" layoutY="853.0" mnemonicParsing="false" onAction="#exit" prefHeight="32.0" prefWidth="32.0" stylesheets="@SideMenuButtons.css" text="EXIT" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@power-button-symbol%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="filterField" layoutX="70.0" layoutY="450.0" visible="false" />
+      <Label layoutX="21.0" layoutY="866.0" text="STATUS     →" textFill="WHITE">
+         <font>
+            <Font name="Open Sans" size="12.0" />
+         </font></Label>
+      <Label fx:id="statusLabel" layoutX="107.0" layoutY="866.0" text="STOPPED">
+         <font>
+            <Font name="Open Sans" size="12.0" />
+         </font></Label>
+      <Label layoutX="21.0" layoutY="887.0" text="MODE       →" textFill="WHITE">
+         <font>
+            <Font name="Open Sans" size="12.0" />
+         </font></Label>
+      <Label fx:id="modeLabel" layoutX="105.0" layoutY="887.0" text="NORMAL" textFill="WHITE">
+         <font>
+            <Font name="Open Sans" size="12.0" />
+         </font></Label>
+      <Button fx:id="menu" layoutX="-17.0" layoutY="14.0" mnemonicParsing="false" onAction="#showSideMenu" prefHeight="42.0" prefWidth="110.0" stylesheets="@SideMenuButtons.css" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@menu%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font></Button>
+      <AnchorPane fx:id="navList" layoutX="-120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="925.0" prefWidth="120.0">
+         <children>
+            <ImageView fitHeight="925.0" fitWidth="120.0" pickOnBounds="true">
+               <image>
+                  <Image url="@side%20menu.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="interfaceButton" contentDisplay="TOP" layoutY="67.0" mnemonicParsing="false" onAction="#showInterfaceMenu" prefHeight="32.0" prefWidth="120.0" styleClass="mainFxmlClass" stylesheets="@SideMenuButtons.css" text="BEGIN CAPTURE" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@right-arrow-circular-button%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="stopButton" contentDisplay="TOP" layoutY="177.0" mnemonicParsing="false" onAction="#stopCapture" prefHeight="32.0" prefWidth="120.0" stylesheets="@SideMenuButtons.css" text="STOP CAPTURE" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@close-cross-circular-interface-button%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </Button>
+            <Button contentDisplay="TOP" layoutY="397.0" mnemonicParsing="false" onAction="#showRulesManagerMenu" prefHeight="32.0" prefWidth="120.0" stylesheets="@SideMenuButtons.css" text="RULES MANAGER" textFill="WHITE" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@shield-outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </Button>
+            <Button contentDisplay="TOP" layoutY="287.0" mnemonicParsing="false" onAction="#showStatisticsMenu" prefHeight="32.0" prefWidth="120.0" stylesheets="@SideMenuButtons.css" text="STATISTICS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@zig-zag-line-graphic-symbol.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="memoryButton" alignment="CENTER" contentDisplay="TOP" layoutY="517.0" mnemonicParsing="false" onAction="#showLogManagerMenu" prefHeight="32.0" prefWidth="120.0" stylesheets="@SideMenuButtons.css" text="LOG MANAGER" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@note-interface-symbol%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton1" layoutX="12.0" layoutY="854.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="96.0" stylesheets="@SideMenuButtons.css" text="  EXIT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@power-button-symbol%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

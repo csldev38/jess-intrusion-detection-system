@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="570.0" stylesheets="@interfacemenu.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainJavaFX.AddRulesMenuController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="570.0" pickOnBounds="true">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="111.0" layoutY="31.0" text="Enter Rule Options" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="52.0" fitWidth="62.0" layoutX="354.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ruleIcon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="145.0" layoutY="537.0" mnemonicParsing="false" onAction="#getRuleOptions" prefHeight="34.0" prefWidth="74.0" text="Add" />
+      <Button layoutX="354.0" layoutY="537.0" mnemonicParsing="false" onAction="#back" prefHeight="34.0" prefWidth="74.0" text="Back" />
+      <Label layoutX="122.0" layoutY="122.0" text="Protocol" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="120.0" layoutY="161.0" text="Source IP" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="114.0" layoutY="202.0" text="Source Port" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="108.0" layoutY="241.0" text="Destination IP" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="102.0" layoutY="279.0" text="Destination Port" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="contentLabel" layoutX="124.0" layoutY="348.0" text="Content" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="source_ip" layoutX="306.0" layoutY="157.0" />
+      <TextField fx:id="source_port" layoutX="306.0" layoutY="198.0" />
+      <TextField fx:id="destination_ip" layoutX="306.0" layoutY="237.0" />
+      <TextField fx:id="destination_port" layoutX="306.0" layoutY="275.0" />
+      <Label layoutX="122.0" layoutY="441.0" text="Message" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextArea fx:id="message" layoutX="306.0" layoutY="407.0" prefHeight="85.0" prefWidth="200.0" promptText="Enter message to be displayed if a match is found." />
+      <TextArea fx:id="content" layoutX="306.0" layoutY="318.0" minHeight="-Infinity" prefHeight="76.0" prefWidth="200.0" promptText="Enter content to be searched within each packets. (can be left empty)" />
+      <ChoiceBox fx:id="protocol" layoutX="305.0" layoutY="118.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>

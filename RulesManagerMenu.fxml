@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="570.0" stylesheets="@interfacemenu.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainJavaFX.RulesManagerMenuController">
+   <children>
+      <ImageView fitHeight="550.0" fitWidth="570.0" pickOnBounds="true">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="201.0" layoutY="27.0" text="RULES MANAGER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="89.0" layoutY="90.0" mnemonicParsing="false" onAction="#showAddRulesMenu" prefHeight="41.0" prefWidth="149.0" text="Add Rule" />
+      <Button layoutX="89.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewRules" prefHeight="41.0" prefWidth="149.0" text="View Rules" />
+      <Button layoutX="89.0" layoutY="227.0" mnemonicParsing="false" onAction="#showUpdateRulesMenu" prefHeight="41.0" prefWidth="149.0" text="Update/Reset Rules" />
+      <Button layoutX="479.0" layoutY="514.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="78.0" text="Back" />
+      <ImageView blendMode="DARKEN" fitHeight="150.0" fitWidth="200.0" layoutX="334.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@settings.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="93.0" layoutY="332.0" text="Current Rules File Location" textFill="WHITE" />
+      <TextArea fx:id="rulesFileTextArea" editable="false" layoutX="51.0" layoutY="368.0" prefHeight="89.0" prefWidth="225.0" />
+      <Label layoutX="356.0" layoutY="332.0" text="Custom Rules Counter" textFill="WHITE" />
+      <TextArea fx:id="customCounterTextArea" editable="false" layoutX="345.0" layoutY="368.0" prefHeight="41.0" prefWidth="141.0" />
+   </children>
+</AnchorPane>
